@@ -1,0 +1,20 @@
+<GridLayout rows="auto,auto,*" class="bg-black">
+
+  <SwiftUI *ngIf="activeItem === 'single'" row="2" swiftId="metaballSingle">
+  </SwiftUI>
+
+  <SwiftUI *ngIf="activeItem === 'clubbed'" row="2" swiftId="metaballClubbed">
+  </SwiftUI>
+
+  <Label text="Metaballs using {N} + SwiftUI" class="text-center text-white font-bold text-2xl mt-4"></Label>
+
+  <SegmentedBar
+    row="1"
+    class="mt-5 mx-5 text-white bg-black"
+    selectedBackgroundColor="purple"
+    [items]="options"
+    selectedIndex="0"
+    (selectedIndexChanged)="onSelectedIndexChanged($event)"
+  >
+  </SegmentedBar>
+</GridLayout>
